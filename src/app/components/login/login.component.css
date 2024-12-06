@@ -1,0 +1,99 @@
+.ventana_modal{
+    z-index: 701;
+
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    background: #ffffff;
+
+    border: solid 1px silver;
+
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translatey(10%);
+}
+
+.contenedor_inicio {
+    width: 80%; margin: auto; padding-bottom: 25px;
+}
+
+.capa_modal_light{
+    display: none;
+    z-index: 700;
+    
+    width: 100%; 
+    height: 100%; 
+    position: fixed; 
+ 
+    background: linear-gradient(#fff, #f2f2f2);
+    overflow-y: auto;
+ }
+
+ .caja2{
+    width: 100%;
+    margin-top: 10px;
+
+    border: none;
+    outline: none;
+
+    -webkit-border-radius: 8px !important;
+    border-radius: 8px !important;
+
+    padding: 10px 12px 10px 12px !important;
+    box-sizing: border-box !important;
+              
+    border: solid 1px gainsboro !important;
+    background: #ffffff;
+
+    font-size: 15px !important;
+    color: #393a3a;
+    font-family:  Roboto-Regular, sans-serif;
+
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+
+    -webkit-transition: border .3s, -webkit-box-shadow .3s;
+            transition: border .3s, -webkit-box-shadow .3s;
+            transition: box-shadow .3s, border .3s;
+            transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;
+
+    box-sizing: border-box;
+}
+
+.caja2:focus{
+    border: solid 1px #34abb7 !important;
+}
+
+.btn_google3 {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    
+    background: #333F50;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    box-sizing: border-box;
+
+    font-size: 13px;
+    font-family: Roboto-Regular, sans-serif;
+
+    font-weight: bold; 
+}
+
+.btn_google3:hover {
+    background: #576A87;
+    cursor: pointer;
+
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
