@@ -1,4 +1,6 @@
-export interface User {
+import { Rol } from "./rol";
+
+export class User {
     id:         number;
     name:       string;
     email:      string;
@@ -8,11 +10,3 @@ export interface User {
     updated_at: Date;
     rol:        Rol;
 }
-
-export interface Rol {
-    id:         number;
-    name:       string;
-    created_at: Date;
-    updated_at: Date;
-}
-

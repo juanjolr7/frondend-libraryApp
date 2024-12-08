@@ -109,3 +109,14 @@ body {
       font-size: 3.5rem;
     }
   }
+
+  .nav-link {
+    color: rgb(255, 255, 255); /* Color base de las opciones */
+    background-color: transparent; /* Fondo inicial */
+    transition: background-color 0.3s, color 0.3s; /* Suaviza el cambio */
+  }
+  
+  .nav-link:hover {
+    color: #000; /* Cambia el texto al pasar el puntero */
+    background-color: #0d6efd; /* Cambia el fondo al pasar el puntero */
+  }

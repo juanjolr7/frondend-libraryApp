@@ -13,4 +13,17 @@ export class UsersService {
   public getUsers(): Observable<User[]>{
     return this._httpClient.get<User[]>(this.apiURLUsers);
   }
+
+  insertUser(user: User) : Observable<Object>{
+    return this._httpClient.post(this.apiURLUsers, user);
+  }
+
+  deleteUser(id: number): Observable<Object> {
+    return this._httpClient.delete(`${this.apiURLUsers}${id}`);
+  }
+
+  updateUser(id: number, user: User): Observable<Object> {
+    return this._httpClient.put(`${this.apiURLUsers}${id}`, user);
+  }
+  
 }
