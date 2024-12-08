@@ -19,12 +19,12 @@
             </div>
 
             <p style="margin-top: 30px; font-weight: bold; color: #dc143c;">Correo electrónico:</p>
-            <input #usuario type="text" class="caja2" style="margin-top: 5px;" placeholder="Usuario">
+            <input [(ngModel)]="userMail" name="userMail" type="text" class="caja2" style="margin-top: 5px;" placeholder="Usuario">
 
             <p style="margin-top: 20px; font-weight: bold; color: #dc143c;">Contraseña:</p>
-            <input #contrasena type="password" class="caja2" style="margin-top: 5px;" placeholder="Contraseña">
+            <input [(ngModel)]="password" name="password"  type="password" class="caja2" style="margin-top: 5px;" placeholder="Contraseña">
 
-            <a class="btn_google3" style="width: 100%; display: block; margin-top: 20px;">Iniciar sesión</a>
+            <a class="btn_google3" style="width: 100%; display: block; margin-top: 20px;" (click)="login()">Iniciar sesión</a>
 
             <p id="lkbforget" style="margin-top: 17px; color: dimgray; text-align: center; cursor: pointer; font-size: 13px;">¿Olvidaste tu contraseña?</p>
 

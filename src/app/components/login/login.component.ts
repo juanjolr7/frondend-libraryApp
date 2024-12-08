@@ -1,12 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UsersService } from '../../services/users.service';
+import { User } from '../../models/user';
+import { FormsModule } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent  implements OnInit{
+  users:User[]=[];
+  password: string = '';
+  userMail:String = '';
+  constructor(private userService:UsersService,private router:Router){
 
+  }
+  ngOnInit(): void {
+    this.userService.getUsers().subscribe( (data:User[]) =>{
+      this.users = data;
+      console.log(this.users);
+    });
+  }
+  login() {
+    const userM = this.userMail;
+    const password = this.password;
+    // Verificar si las credenciales coinciden con algún usuario en testUsers
+    const user = this.users.find(
+      user => user.email === userM && user.password === password
+    );
+
+    if (user) {
+      this.router.navigate(['/menu']); // Redirige a la ruta 'home'
+    } else {
+      alert('Usuario no encontrado');
+    }
+  }
 }
