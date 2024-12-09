@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
@@ -21,7 +21,7 @@ import Swal from 'sweetalert2';
     MatInputModule,
     MatSortModule,
     CommonModule,
-    FormsModule,
+    FormsModule
   ],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css',
@@ -47,23 +47,19 @@ export class UserComponent implements OnInit {
   constructor(private userService: UsersService, private router: Router) {}
 
   ngOnInit(): void {
-    this.user.id_rol = 2;
     this.getUsers();
   }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-    console.log('after');
   }
 
   getUsers() {
     this.userService.getUsers().subscribe({
       next: (datos) => {
         this.usuarios = datos;
-        console.log('------------', this.usuarios);
         this.dataSource.data = this.usuarios;
-        console.log('datasource ', this.usuarios);
       },
       error: (errores) => console.log(errores),
     });
@@ -110,8 +106,8 @@ export class UserComponent implements OnInit {
           text: 'Registro Exitoso!',
           icon: 'success',
         });
-        console.log('Nuevo usuario:', this.user);
         this.closeModal(); // Cierra el modal después de crear el usuari
+        this.getUsers();
       },
       error: (errores) => {
         console.log(errores);
@@ -158,7 +154,6 @@ export class UserComponent implements OnInit {
   }
 
   updateUser() {
-    console.log('el usuario que vamos a actualizar ess ',this.user);
     this.userService.updateUser(this.user.id, this.user).subscribe({
       next: (response) => {
         Swal.fire({
