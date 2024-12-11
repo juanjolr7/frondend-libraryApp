@@ -1,2 +1,2 @@
-export interface Book {
+export class Book {
 }

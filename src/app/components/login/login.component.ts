@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users.service';
 import { User } from '../../models/user';
 import { FormsModule } from '@angular/forms';
-import { Route, Router } from '@angular/router';
+import { Route, Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -24,6 +24,7 @@ export class LoginComponent  implements OnInit{
       console.log(this.users);
     });
   }
+  
   login() {
     const userM = this.userMail;
     const password = this.password;
@@ -33,7 +34,7 @@ export class LoginComponent  implements OnInit{
     );
 
     if (user) {
-      this.router.navigate(['/menu']); // Redirige a la ruta 'home'
+      this.router.navigate(['/menu/home']);
     } else {
       alert('Usuario no encontrado');
     }
