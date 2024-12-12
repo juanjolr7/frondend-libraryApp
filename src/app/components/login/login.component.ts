@@ -3,6 +3,7 @@ import { UsersService } from '../../services/users.service';
 import { User } from '../../models/user';
 import { FormsModule } from '@angular/forms';
 import { Route, Router, RouterOutlet } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent  implements OnInit{
   users:User[]=[];
   password: string = '';
   userMail:String = '';
-  constructor(private userService:UsersService,private router:Router){
+  constructor(private userService:UsersService,private router:Router, private authService:AuthService){
 
   }
   ngOnInit(): void {
@@ -34,6 +35,7 @@ export class LoginComponent  implements OnInit{
     );
 
     if (user) {
+      this.authService.setCurrentUser(user);
       this.router.navigate(['/menu/home']);
     } else {
       alert('Usuario no encontrado');

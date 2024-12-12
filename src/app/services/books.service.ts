@@ -15,4 +15,16 @@ export class BooksService {
   public getBooks(): Observable<Book[]>{
     return this._httpClient.get<Book[]>(this.apiURL);
   }
+
+  insertBook(book: Book) : Observable<Object>{
+    return this._httpClient.post(this.apiURL, book);
+  }
+
+  deleteBook(id: number): Observable<Object> {
+    return this._httpClient.delete(`${this.apiURL}${id}`);
+  }
+
+  updateBook(id: number, book: Book): Observable<Object> {
+    return this._httpClient.put(`${this.apiURL}${id}`, book);
+  }
 }
