@@ -123,7 +123,7 @@ export class BooksService {
 }
 ```
 
-## Parte 2: Creación de Componentes
+## Parte 3: Creación de Componentes
 Los componentes se encargan de la parte visual, permitiendo interactuar al usuario con el sistema.
 
 
@@ -1727,7 +1727,7 @@ export class BookComponent implements OnInit{
   }
 ```
 
-## Parte 5: Ejecución del Proyecto
+## Parte 4: Ejecución del Proyecto
 Para ejecutar la aplicación:
 ```bash
 ng serve -o
